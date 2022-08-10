@@ -1,0 +1,43 @@
+# ===================================================================
+# 云项目emr应用服务配置
+# ===================================================================
+#spring.profiles:
+#     配置文件管理，实现配置插拔式开发思路
+#     1.profiles:可以是配置中的profiles属性，也可以是某个类(被@profiles注解即可)
+#     2.active:选择需要激活的配置文件
+spring:
+  application:
+    name: lchsproject
+  profiles:
+
+    active: dev_cloud
+  servlet:
+    multipart:
+      max-file-size: 10MB   #设置单个文件最大长度
+      max-request-size: 10MB  #最大请求文件的大小
+
+---
+spring:
+  profiles: appConfig
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+        temp:
+          use_jdbc_metadata_defaults: false
+
+
+info:
+  component:
+multipart:
+# 不做任何限制   -1
+  max-file-size: 10Mb
+#支持mybatis语境
+
+
+
+
+
+
+
